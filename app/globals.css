@@ -1,0 +1,201 @@
+@import "tailwindcss";
+
+/* ==========================================
+   FONTS
+   ========================================== */
+
+@font-face {
+  font-family: 'Redaction';
+  src: url('/fonts/Redaction-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Redaction';
+  src: url('/fonts/Redaction-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Redaction';
+  src: url('/fonts/Redaction-Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi-Variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('/fonts/Satoshi-VariableItalic.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ==========================================
+   CSS VARIABLES
+   ========================================== */
+
+:root {
+  /* Colors */
+  --wercor-yellow: #DCDE28;
+  --wercor-black: #000000;
+  --wercor-dark-green: #0C493A;
+  --wercor-white: #FFFFFF;
+  --wercor-green: #7EB50F;
+  --wercor-dark-gray: #212223;
+  --wercor-gray: #757F85;
+  --wercor-light-gray: #CACFD2;
+  --wercor-lighter-gray: #E1E5E8;
+  --wercor-mint: #EFFFFF;
+
+  /* Fonts */
+  --font-logo: 'Redaction', Georgia, serif;
+  --font-heading: 'Satoshi', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+/* ==========================================
+   BASE STYLES
+   ========================================== */
+
+body {
+  font-family: var(--font-body);
+  color: var(--wercor-dark-gray);
+  background-color: var(--wercor-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--wercor-black);
+}
+
+/* ==========================================
+   COMPONENT CLASSES
+   ========================================== */
+
+.wercor-logo {
+  font-family: var(--font-logo);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.btn-primary {
+  background-color: var(--wercor-dark-green);
+  color: var(--wercor-white);
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #0a3d31;
+}
+
+.btn-accent {
+  background-color: var(--wercor-yellow);
+  color: var(--wercor-black);
+  transition: all 0.2s ease;
+}
+
+.btn-accent:hover {
+  background-color: #c8ca20;
+}
+
+.btn-outline {
+  border: 2px solid var(--wercor-dark-green);
+  color: var(--wercor-dark-green);
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+.btn-outline:hover {
+  background-color: var(--wercor-dark-green);
+  color: var(--wercor-white);
+}
+
+.wercor-card {
+  background: var(--wercor-white);
+  border: 1px solid var(--wercor-lighter-gray);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.wercor-card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  border-color: var(--wercor-light-gray);
+}
+
+.wercor-tag {
+  background-color: var(--wercor-mint);
+  color: var(--wercor-dark-green);
+  font-size: 0.875rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+}
+
+.wercor-badge-verified {
+  background-color: var(--wercor-mint);
+  color: var(--wercor-dark-green);
+  font-weight: 600;
+}
+
+.wercor-badge-featured {
+  background-color: var(--wercor-yellow);
+  color: var(--wercor-black);
+  font-weight: 600;
+}
+
+.wercor-pill {
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border: 1px solid var(--wercor-lighter-gray);
+  cursor: pointer;
+}
+
+.wercor-pill:hover {
+  border-color: var(--wercor-dark-green);
+}
+
+.wercor-pill-active {
+  background-color: var(--wercor-dark-green);
+  color: var(--wercor-white);
+  border-color: var(--wercor-dark-green);
+}
+
+.wercor-search {
+  border: 2px solid var(--wercor-light-gray);
+  border-radius: 12px;
+  transition: border-color 0.2s ease;
+}
+
+.wercor-search:focus {
+  border-color: var(--wercor-dark-green);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(12, 73, 58, 0.1);
+}
+
+.wercor-link {
+  color: var(--wercor-dark-green);
+  transition: color 0.2s ease;
+}
+
+.wercor-link:hover {
+  color: #0a3d31;
+  text-decoration: underline;
+}
