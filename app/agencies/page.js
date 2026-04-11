@@ -1,12 +1,13 @@
 'use client';
-import { useState, useEffect } from 'react';
+
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { api } from '@/app/lib/api';
 import Link from 'next/link';
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 
-export default function AgenciesPage() {
+function AgenciesContent() {
   const searchParams = useSearchParams();
   const [agencies, setAgencies] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -288,5 +289,13 @@ export default function AgenciesPage() {
 
       <Footer />
     </div>
+  );
+}
+
+export default function AgenciesPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+      <AgenciesContent />
+    </Suspense>
   );
 }
