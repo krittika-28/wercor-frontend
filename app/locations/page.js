@@ -1,13 +1,13 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import { api } from '@/app/lib/api';
 import Header from '@/app/components/Header';
 import Footer from '@/app/components/Footer';
 
-function LocationsPage() {
+function LocationsContent() {
   const searchParams = useSearchParams();
   const [countries, setCountries] = useState([]);
   const [continents, setContinents] = useState([]);
@@ -97,4 +97,10 @@ function LocationsPage() {
   );
 }
 
-export default LocationsPage;
+export default function LocationsPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
+      <LocationsContent />
+    </Suspense>
+  );
+}
