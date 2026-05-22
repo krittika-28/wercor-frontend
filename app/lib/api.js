@@ -67,12 +67,12 @@ export const api = {
     },
 
     // ===== Generic =====
-    get: (path) => {
-        return axiosInstance.get(`/api${path}`);
-    },
-    post: (path, data) => {
-        return axiosInstance.post(`/api${path}`, data);
-    },
+   get: (path) => {
+    return axiosInstance.get(path);
+},
+post: (path, data) => {
+    return axiosInstance.post(path, data);
+},
 };
 
 export default api;
